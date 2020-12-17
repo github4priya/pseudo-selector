@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After Pseudo Selectors</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            color: white;
+
+        }
+
+        header::before {
+            background: url(https://images.pexels.com/photos/924633/pexels-photo-924633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center/cover;
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navigation {
+            font-size: 23px;
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            padding: 20px 23px;
+        }
+
+        section {
+            margin: 3px 23px;
+            display: flex;
+            flex-direction: column;
+            /* border: 2px solid red; */
+            align-items: center;
+            padding: 20px;
+            height: 500px;
+            justify-content: center;
+            text-align: center;
+        }
+
+        section::before {
+            content: "This is a content";
+        }
+        .grid {
+            display: grid;
+            grid-template-rows: 1fr 1fr 4fr;
+            grid-auto-rows: 2fr;
+            /*jis row ko nhi bataya usko 2fr milega*/
+            grid-template-columns: 1fr 4fr 2fr;
+            grid-gap: 1rem;
+            border: 2px solid black;
+            background-color: green;
+            height: 220px;
+        }
+
+        .box {
+            background-color:black;
+            height: 200px;
+            border: 2px solid black;
+            color: white;
+            text-align: center;
+        }
+        div>a{
+            color: brown;
+            font-size: 25px;
+        }
+        a:hover {
+            color: brown;
+            background: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navigation">
+                <li class="item">Home</li>
+                <li class="item">About</li>
+                <li class="item">Services</li>
+                <li class="item">Contact Us</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h3>Welcome to coding world</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maxime tempore, accusamus optio, rem
+            iure deserunt quos repellat eius nemo blanditiis molestias dolore. Asperiores repudiandae ducimus dolore
+            soluta tempora necessitatibus tenetur quibusdam magnam mollitia!</p>
+    </section>
+    
+    <div class="grid">
+        <div class="box">
+            <h1>Address</h1>
+            <p>sector 5/B Floor No.-02, Maruthi Building, Near Rajasthani Port, Rajasthan, India</p>
+        </div>
+        <div class="box">
+            <h1>Online registration:</h1>
+            <a href="www.abcd.2@example.com">Click here to register</a>
+        </div>
+        <div class="box">
+            <h1>Contact details:</h1>
+            Phone no. 876543219
+        </div>
+
+    </div>
+</body>
+
+</html>
